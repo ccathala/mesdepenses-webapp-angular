@@ -1,0 +1,24 @@
+name: 10 - CI dev
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install -g @angular/cli
+      - run: ng build
+      - uses: actions/upload-artifact@main
+        with:
+          name: mesdepenses-webapp-test
+          path: dist/
