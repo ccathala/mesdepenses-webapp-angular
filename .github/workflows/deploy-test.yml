@@ -31,7 +31,7 @@ jobs:
           workflow: ci-dev.yml
           workflow_conclusion: success
           branch: dev
-          path: /home/runner/work/mesdepenses-webapp/mesdepenses-webapp/dist/
+          path: /home/runner/work/mesdepenses-webapp-angular/mesdepenses-webapp-angular/dist/
 
       - name: Create image and store in Packages
         uses: mattdavis0351/actions/docker-gpr@1.3.0
